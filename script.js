@@ -6,32 +6,38 @@ function getComputerChoice(computer) {
 
 
 function playRound(playerSelection, computerSelection) {
-    playerSelection.toLowerCase()
+    playerSelection.toLowerCase();
     if (playerSelection === "rock" && computerSelection === "Rock") {
-    return "It's a tie! Rock ties with rock";
+        return "It's a tie! Rock ties with rock";
     }
     else if (playerSelection === "rock" && computerSelection === "Paper") {
-    return "You lost! Rock is beaten by paper";
+        computerScore++
+        return "You lost! Rock is beaten by paper";
     }
     else if (playerSelection === "rock" && computerSelection === "Scissors") {
-    return "You won! Rock beats scissors";
+        userScore++
+        return "You won! Rock beats scissors";
     }
     else if (playerSelection === "paper" && computerSelection === "Paper") {
         return "It's a tie! Paper ties with paper";
     }
     else if (playerSelection === "paper" && computerSelection === "Rock") {
+        userScore++;
         return "You won! Paper beats rock";
     }
     else if (playerSelection === "paper" && computerSelection === "Scissors") {
+        computerScore++;
         return "You lost! Paper is beaten by scissors";
     }
     else if (playerSelection === "scissors" && computerSelection === "Scissors") {
         return "It's a tie! Scissors ties with scissors";
     }
     else if (playerSelection === "scissors" && computerSelection === "Rock") {
+        computerScore++;
         return "You lost! Scissors is beaten by rock";
     }
     else if (playerSelection === "scissors" && computerSelection === "Paper") {
+        userScore++;
         return "You won! Scissors beats paper";   
     }
     else {
@@ -45,6 +51,17 @@ let computerSelection = getComputerChoice(computer);
 
 let playerSelection = "paper";
 
-console.log(playerSelection);
-console.log(computerSelection);
-console.log(playRound(playerSelection, computerSelection));
+
+
+let userScore = parseInt(0);
+let computerScore = parseInt(0);
+let win = "You win"
+let lose = "You lose"
+let tie = "It is a tie"
+
+for(var i=0;i<5;i++){
+  let playerSelection = prompt("Pick a move");
+  console.log(playRound(playerSelection, computerSelection));
+  console.log("your score = " + userScore);
+  console.log("Computer's score = " + computerScore);
+}
