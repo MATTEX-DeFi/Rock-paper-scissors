@@ -50,6 +50,7 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+// scores variables
 let playerScore = parseInt(0);
 let computerScore = parseInt(0);
 let win = "You win"
