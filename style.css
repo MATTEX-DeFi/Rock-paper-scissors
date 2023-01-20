@@ -1,0 +1,168 @@
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container{
+  width: 100%;
+  min-height: 10vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:#000;
+}
+
+.text{
+  font-weight: 600;
+  font-size: 70px;
+  line-height:65px;
+  letter-spacing: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 400%;
+  animation: move 5s ease infinite;
+  background-image: linear-gradient( 68.7deg,  rgba(29,173,235,1) 13.2%, rgba(137,149,250,1) 29.8%, rgba(229,109,212,1) 48.9%, rgba(255,68,128,1) 68.2%, rgba(255,94,0,1) 86.4% );
+}
+
+@keyframes move {
+  0%,100%{
+      background-position: 200% 0%;
+  }
+
+  50%{
+      background-position: 0% 200%;
+  }
+}
+
+body {
+  background-color: #000;
+}
+
+
+.buttonR, .buttonP, .buttonS, .restartBtn{ 
+outline: 0;
+grid-gap: 8px;
+align-items: center;
+background-color: #ff90e8;
+color: #000;
+border: 1px solid #000;
+border-radius: 4px;
+cursor: pointer;
+display: inline-flex;
+flex-shrink: 0;
+font-size: 16px;
+gap: 8px;
+justify-content: center;
+line-height: 1.5;
+overflow: hidden;
+padding: 12px 16px;
+text-decoration: none;
+text-overflow: ellipsis;
+transition: all .14s ease-out;
+white-space: nowrap;
+}
+.buttonS:hover {
+    box-shadow: 4px 4px 0 #000;
+    transform: translate(-4px,-4px);
+}
+.buttonP:hover {
+  box-shadow: 4px 4px 0 #000;
+  transform: translate(-4px,-4px);
+}
+.buttonR:hover {
+  box-shadow: 4px 4px 0 #000;
+  transform: translate(-4px,-4px);
+}
+.buttonS:focus-visible {
+    outline-offset: 1px;
+}
+.buttonP:focus-visible {
+  outline-offset: 1px;
+}
+.buttonR:focus-visible {
+  outline-offset: 1px;
+}
+.restartBtn:hover {
+  box-shadow: 4px 4px 0 #000;
+  transform: translate(-4px,-4px);
+}
+.restartBtn:focus-visible {
+  outline-offset: 1px;
+}
+
+
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+
+.result {
+	margin: auto;
+}
+
+.result {
+	font-size: 3rem;
+}
+
+.result {
+	background-clip: text;
+	color: #FFDD49;
+	animation: outline 1s ease-in-out 1.5s forwards;
+}
+
+@keyframes result {
+	from {
+		text-shadow: 0em -7em 10em #fff;
+	}
+	to {
+		text-shadow: 0 0.02em #fff, 0.02em 0 #fff, -0.02em 0 #fff, 0 -0.02em #fff;
+	}
+}
+.container2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid #fff;
+  width: 50%;
+  height: 150px;
+  margin: auto;
+  margin-top: 60px;
+}
+.container3 {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.playerScore, .computerScore {
+  background-clip: text;
+	color: #FFDD49;
+	animation: outline 1s ease-in-out 1.5s forwards;
+  font-size: 20px;
+}
+.container1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 243px;
+  height: 150px;
+  margin: auto;
+}
+.buttonS {
+  margin-left: -5px;
+}
+.winLose {
+  text-align: center;
+  background-clip: text;
+	color: #2cc8f7;
+	animation: outline 1s ease-in-out 1.5s forwards;
+  font-size: 30px;
+  margin-top: 20px;
+}
+.container4 {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}

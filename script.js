@@ -1,4 +1,6 @@
+alert('Choose a weapon to begin the game!');
 const computer = ["Rock", "Paper", "Scissors"];
+
 // function for a random computerChoice
 function getComputerS(arr) {
    
@@ -10,7 +12,7 @@ function getComputerS(arr) {
 } 
 
 
-// Core function (Game 1 round)
+// Core function (1 round)
 function playRound(playerSelection, computerSelection) {
     if (playerSelection.toLowerCase() === "rock" && computerSelection === "Rock") {
         return "It's a tie! Rock ties with rock";
@@ -53,17 +55,120 @@ function playRound(playerSelection, computerSelection) {
 // scores variables
 let playerScore = parseInt(0);
 let computerScore = parseInt(0);
-let win = "You win"
-let lose = "You lose"
-let tie = "It is a tie"
-
-// Loop to play 5 rounds
-for(var i=0;i<5;i++){
-    let playerSelection = prompt("Pick a move");
-    const computerSelection = getComputerS(computer);
-    console.log(playRound(playerSelection, computerSelection))
-    console.log("your score = " + playerScore);
-    console.log("Computer's score = " + computerScore);
-  }
 
 
+//DOM Manipulation (UI)
+let playerSc = document.getElementsByClassName('playerScore')[0];
+playerSc.textContent = "Your score = " + playerScore;
+
+let computerSc = document.getElementsByClassName('computerScore')[0];
+computerSc.textContent = "Computer's score = " + computerScore;
+
+const results = document.getElementsByClassName('result')[0];
+
+let winOrLose = document.getElementsByClassName('winLose')[0];
+let restartBtn = document.getElementsByClassName('restartBtn')[0];
+
+    
+// Rock button 
+    const buttonRock = document.getElementsByClassName('buttonR')[0].addEventListener('click', function (){
+        let playerSelection = 'rock';
+        const computerSelection = getComputerS(computer);
+            results.textContent = (playRound(playerSelection,computerSelection));
+            let playerSc = document.getElementsByClassName('playerScore')[0];
+            playerSc.textContent = "Your score = " + playerScore;
+            let computerSc = document.getElementsByClassName('computerScore')[0];
+            computerSc.textContent = "Computer's score = " + computerScore;
+        
+            if (playerScore === 5) {
+                winOrLose.textContent = 'You won the game! If you want to play another game, click the restart button.';
+                restartBtn.textContent = 'Restart';
+                restartBtn.addEventListener('click', function (){
+                location.reload();
+                });
+                document.getElementsByClassName('buttonR')[0].disabled = true;
+                document.getElementsByClassName('buttonP')[0].disabled = true;
+                document.getElementsByClassName('buttonS')[0].disabled = true;
+            } else if (computerScore === 5) {
+                winOrLose.textContent = 'You lost the game 😔 If you want to play another game, click the restart button.';
+                restartBtn.textContent = 'Restart';
+                restartBtn.addEventListener('click', function(){
+                    location.reload();
+                });
+                document.getElementsByClassName('buttonR')[0].disabled = true;
+                document.getElementsByClassName('buttonP')[0].disabled = true;
+                document.getElementsByClassName('buttonS')[0].disabled = true;
+            } else {
+                return '';
+            }});
+
+
+    
+// Paper button
+    const buttonPaper = document.getElementsByClassName('buttonP')[0].addEventListener('click', function (){
+      let playerSelection = 'paper';
+      const computerSelection = getComputerS(computer);
+        results.textContent = (playRound(playerSelection, computerSelection));
+        let playerSc = document.getElementsByClassName('playerScore')[0];
+        playerSc.textContent = "Your score = " + playerScore;
+        let computerSc = document.getElementsByClassName('computerScore')[0];
+        computerSc.textContent = "Computer's score = " + computerScore;
+    
+        if (playerScore === 5) {
+            winOrLose.textContent = 'You won the game! If you want to play another game, click the restart button.';
+            restartBtn.textContent = 'Restart';
+            restartBtn.addEventListener('click', function (){
+            location.reload();
+            });
+            document.getElementsByClassName('buttonR')[0].disabled = true;
+            document.getElementsByClassName('buttonP')[0].disabled = true;
+            document.getElementsByClassName('buttonS')[0].disabled = true;
+        } else if (computerScore === 5) {
+            winOrLose.textContent = 'You lost the game 😔 If you want to play another game, click the restart button.';
+            restartBtn.textContent = 'Restart';
+            restartBtn.addEventListener('click', function(){
+                location.reload();
+            });
+            document.getElementsByClassName('buttonR')[0].disabled = true;
+            document.getElementsByClassName('buttonP')[0].disabled = true;
+            document.getElementsByClassName('buttonS')[0].disabled = true;
+        } else {
+            return '';
+        }});
+    
+    
+    
+// Scissors button
+    const buttonScissors = document.getElementsByClassName('buttonS')[0].addEventListener('click', function (){
+        let playerSelection = 'scissors';
+        const computerSelection = getComputerS(computer);
+        results.textContent = (playRound(playerSelection, computerSelection));
+        let playerSc = document.getElementsByClassName('playerScore')[0];
+        playerSc.textContent = "Your score = " + playerScore;
+        let computerSc = document.getElementsByClassName('computerScore')[0];
+        computerSc.textContent = "Computer's score = " + computerScore;
+        
+        if (playerScore === 5) {
+            winOrLose.textContent = 'You won the game! If you want to play another game, click the restart button.';
+            restartBtn.textContent = 'Restart';
+            restartBtn.addEventListener('click', function (){
+            location.reload();
+            });
+            document.getElementsByClassName('buttonR')[0].disabled = true;
+            document.getElementsByClassName('buttonP')[0].disabled = true;
+            document.getElementsByClassName('buttonS')[0].disabled = true;
+        } else if (computerScore === 5) {
+            winOrLose.textContent = 'You lost the game 😔 If you want to play another game, click the restart button.';
+            restartBtn.textContent = 'Restart';
+            restartBtn.addEventListener('click', function(){
+                location.reload();
+            });
+            document.getElementsByClassName('buttonR')[0].disabled = true;
+            document.getElementsByClassName('buttonP')[0].disabled = true;
+            document.getElementsByClassName('buttonS')[0].disabled = true;
+        } else {
+            return '';
+        }});
+
+
+ 
