@@ -2,7 +2,7 @@
 Simple implementation of Rock Paper Scissors game from The Odin Project.
 
 This is my first HTML/CSS/JS project.
-Live version of the game is here: https://github.com/MATTEX-DeFi/Rock-paper-scissors.git
+Live version of the game is here: https://mattex-defi.github.io/Rock-paper-scissors/
 ## First stage | Game in the browser console
 ### The benefits I got from this stage:
 • Deepened knowledge of how functions work with each other.
